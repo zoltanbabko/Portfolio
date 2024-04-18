@@ -1,0 +1,53 @@
+name: Need4Stek
+run-name: ${{github.actor}} has checked N4S
+on:
+  push:
+    branches-ignore:
+      - 'ga-ignore-*'
+  pull_request:
+    branches-ignore:
+      - 'ga-ignore-*'
+
+env:
+  EXECUTABLES: "ai"
+
+jobs:
+  check_coding_style:
+    name: Check Coding Style
+    runs-on: ubuntu-latest
+    container: ghcr.io/epitech/coding-style-checker:latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: check_coding_style
+        name: Run coding-style
+        run: check.sh . /tmp
+      - run: |
+          input=/tmp/coding-style-reports.log
+          while IFS= read -r -a line; do
+            fields=($(printf "%s" "$line"|cut -d':' --output-delimiter=' ' -f1-))
+            echo "::error title=${fields[2]} coding style error,file=${fields[0]},line=${fields[1]}::${fields[3]}"
+          done < $input
+      - run: |
+          NB_ERROR=$(cat /tmp/coding-style-reports.log | wc -l)
+          if [ $NB_ERROR -gt 0 ]; then
+            echo Coding style error detected
+            exit 1
+          fi
+    
+  check_program_compilation:
+    name: Check Program Compilation
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    container: epitechcontent/epitest-docker:latest
+    steps:  
+      - uses: actions/checkout@v4
+      - id: check_program_compilation
+        run: make
+      - run: make clean 
+      - run: |
+          for file in ${{ env.EXECUTABLES }};do
+            if [ ! -x "$file" ]; then
+              echo "File $file not here or not executable"
+              exit 1
+            fi
+          done
