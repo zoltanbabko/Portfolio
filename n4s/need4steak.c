@@ -7,21 +7,13 @@
 
 #include "my.h"
 
-stats_t init_struct(stats_t *new)
-{
-    new->velocity = 0.5;
-    return *new;
-}
-
 int main(void)
 {
-    stats_t *new = malloc(sizeof(stats_t));
+    char *start_sim = NULL;
+    size_t buf_size = 0;
 
-    if (new == NULL)
-        return 84;
-    *new = init_struct(new);
-    printf("START_SIMULATION\n");
-    start(new);
-    free(new);
+    dprintf(1, "START_SIMULATION\n");
+    getline(&start_sim, &buf_size, stdin);
+    start();
     return 0;
 }

@@ -2,3 +2,8 @@ coding-style-reports.log
 *.o
 *.c~
 ai
+n4s
+n4s_buffer
+pipes.sh
+scene
+ctrl.sh

@@ -1,6 +1,5 @@
-# My Projects
+# Mon Portfolio
 
-D'autres projets tels que l'IA en trio et Graphique (trio) sont prévu pour le reste de l'année.
 Pour avoir le PDF des consignes allé sur le semestre 1 et 2 concerner : https://github.com/Studio-17/Epitech-Subjects
 Pour les projets graphiques, il faut vérifier avoir installé la CSFML sur votre pc.
 
@@ -14,6 +13,7 @@ Projets de Maths :
 Projets graphique :
 - My_Hunter (solo)
 - My_paint (duo)
+- My_RPG (trio)
 
 Projets technique :
 - Mini printf (solo)
@@ -26,6 +26,9 @@ Projets technique :
 - Robot factory (duo)
 - Amazed (trio)
 
+Projet IA :
+- N4S (trio)
+
 Projets Shell :
 - Minishell 1 (solo)
 - Minishell 2 (solo)
@@ -33,6 +36,11 @@ Projets Shell :
 Projets DevOps :
 - Popeye (solo)
 - Chocolatine (solo)
+
+Projet Web :
+- Epytodo (duo)
+- Projet perso type Wordpress (alliancepiscines60.com)
+
 
 Epitech Projects realised by Zoltan BABKO ROBERT
 

@@ -14,16 +14,18 @@
     #include <signal.h>
     #include <stdarg.h>
     #include <fcntl.h>
+    #include <string.h>
 
     #define BUFFER_SIZE 1024
 
 typedef struct stats {
     float velocity;
-    float speed;
-    float wheels;
-    float lidar;
+    char *track_finished;
 } stats_t;
 
-int start(stats_t *new);
+int start(void);
+stats_t init_struct(stats_t *new);
+char **my_output_to_string(char *str, const char *delimiters);
+int car_dir(char **lidar_infos);
 
 #endif /* !MY_H_ */

@@ -5,7 +5,9 @@
 ## Makefile
 ##
 
-SRC	=	./start.c			\
+SRC	=	./start.c				\
+		./output_to_string.c	\
+		./car_dir.c				\
 
 OBJ	=	$(SRC:.c=.o)
 
