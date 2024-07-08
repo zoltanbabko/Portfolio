@@ -1,6 +1,6 @@
 # My Projects
 
-D'autres projets tels que l'IA en trio, développement Web et Graphique (trio) sont prévu pour le reste de l'année.
+D'autres projets tels que l'IA en trio et Graphique (trio) sont prévu pour le reste de l'année.
 Pour avoir le PDF des consignes allé sur le semestre 1 et 2 concerner : https://github.com/Studio-17/Epitech-Subjects
 Pour les projets graphiques, il faut vérifier avoir installé la CSFML sur votre pc.
 
